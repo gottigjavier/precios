@@ -2,28 +2,23 @@ import json
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
+from paths import SUPERMERCADOS_FILE, RESULTADOS_JSON
+
 
 def load_supermarkets_data(
     supermercados_file: Optional[str] = None,
 ) -> List[Dict[str, str]]:
-    file_path = (
-        supermercados_file
-        if supermercados_file
-        else "/home/javier/programacion/python/supermercados/supermercados.json"
-    )
+    file_path = supermercados_file if supermercados_file else SUPERMERCADOS_FILE
     with open(file_path) as f:
         return json.load(f)
 
 
 def load_results_data(resultados_file: Optional[str] = None) -> List[Dict[str, Any]]:
-    if resultados_file is None:
-        resultados_file = (
-            "/home/javier/programacion/python/supermercados/resultados.json"
-        )
-    if not Path(resultados_file).exists():
+    file_path = resultados_file if resultados_file else RESULTADOS_JSON
+    if not Path(file_path).exists():
         return []
 
-    with open(resultados_file) as f:
+    with open(file_path) as f:
         data = json.load(f)
 
     rows = []
@@ -35,6 +30,7 @@ def load_results_data(resultados_file: Optional[str] = None) -> List[Dict[str, A
                     "marca": resultado.get("marca", ""),
                     "precio": resultado.get("precio", ""),
                     "supermercado": resultado.get("supermercado", ""),
+                    "url": resultado.get("url", ""),
                 }
             )
 

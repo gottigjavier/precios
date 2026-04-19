@@ -1,18 +1,18 @@
+import os
 import subprocess
 import threading
 import time
-from pathlib import Path
+import webbrowser
 
 import dearpygui.dearpygui as dpg
 import faulthandler
 
 from gui import load_supermarkets_data, load_results_data
-from app import save_multiple_products, build_busca_command, RESULTADOS_JSON
+from app import save_multiple_products, build_busca_command
 
 faulthandler.enable()
 
-BASE_DIR = Path("/home/javier/programacion/python/supermercados")
-PRODUCTS_FILE = BASE_DIR / "products.json"
+from paths import BASE_DIR
 
 supermarkets = []
 selected_supermarkets = set()
@@ -164,39 +164,68 @@ def save_and_search_callback(sender, app_data):
     thread.start()
 
 
+url_store = {}
+
+
+def open_url_callback(sender, app_data):
+    url = url_store.get(sender)
+    if url:
+        webbrowser.open(url)
+
+
 def show_results_callback(sender, app_data):
-    global results_data
+    global results_data, url_store
 
     results_data = load_results_data()
+    url_store = {}
 
-    table = "table_results"
-    if dpg.does_item_exist(table):
-        dpg.delete_item(table)
+    if not results_data:
+        dpg.set_value("status_label", "No hay resultados")
+        return
+
+    if dpg.does_item_exist("results_placeholder"):
+        dpg.delete_item("results_placeholder")
+
+    if dpg.does_item_exist("results_header"):
+        dpg.delete_item("results_header")
+
+    if dpg.does_item_exist("table_results"):
+        dpg.delete_item("table_results")
+
+    dpg.add_text("Resultados", parent="results_container", tag="results_header")
 
     with dpg.table(
         parent="results_container",
-        tag=table,
+        tag="table_results",
         header_row=True,
         borders_innerH=True,
-        borders_outerH=True,
-        borders_outerV=True,
-        resizable=True,
     ):
         dpg.add_table_column(label="Producto", width_stretch=True)
         dpg.add_table_column(label="Marca", width_stretch=True)
         dpg.add_table_column(label="Precio", width_fixed=True, width=100)
-        dpg.add_table_column(label="Supermercado", width_fixed=True, width=120)
+        dpg.add_table_column(label="Supermercado", width_fixed=True, width=100)
+        dpg.add_table_column(label="Link", width_fixed=True, width=70)
 
-        for row in results_data:
+        for idx, row in enumerate(results_data):
             precio = row.get("precio", "")
             precio_str = (
                 f"${precio:,.2f}" if isinstance(precio, (int, float)) else str(precio)
             )
+            url = row.get("url", "")
+            button_tag = f"btn_abrir_{idx}"
+            url_store[button_tag] = url
             with dpg.table_row():
                 dpg.add_text(row.get("producto", ""))
                 dpg.add_text(row.get("marca", ""))
                 dpg.add_text(precio_str)
                 dpg.add_text(row.get("supermercado", ""))
+                dpg.add_button(
+                    label="Abrir",
+                    tag=button_tag,
+                    width=60,
+                    height=20,
+                    callback=open_url_callback,
+                )
 
 
 def create_gui():
@@ -216,10 +245,10 @@ def create_gui():
 
     dpg.create_viewport(
         title="Buscador de Precios",
-        width=900,
-        height=700,
-        min_width=800,
-        min_height=600,
+        width=1080,
+        height=840,
+        min_width=960,
+        min_height=720,
     )
 
     with dpg.theme():
@@ -228,6 +257,11 @@ def create_gui():
             dpg.add_theme_color(dpg.mvThemeCol_WindowBg, [250, 250, 252, 255])
             dpg.add_theme_color(dpg.mvThemeCol_TableHeaderBg, [230, 230, 235, 255])
             dpg.add_theme_style(dpg.mvStyleVar_FrameRounding, 6)
+
+    with dpg.font_registry():
+        font_path = "/usr/share/fonts/TTF/DejaVuSans.ttf"
+        default_font = dpg.add_font(font_path, 17)
+        dpg.bind_font(default_font)
 
     with dpg.window(tag="main_window"):
         with dpg.menu_bar():
@@ -245,12 +279,12 @@ def create_gui():
                 dpg.add_input_text(
                     tag="input_productos",
                     hint="producto1, marca1, tamano1\nproducto2, marca2, tamano2",
-                    width=500,
-                    height=100,
+                    width=600,
+                    height=120,
                     multiline=True,
                 )
 
-                dpg.add_spacer(height=10)
+                dpg.add_spacer(height=12)
                 dpg.add_text("Seleccionar Supermercados")
 
                 with dpg.group(tag="supermarkets_group"):
@@ -261,16 +295,16 @@ def create_gui():
                             label=sname, tag=f"checkbox_{sid}", default_value=True
                         )
 
-                dpg.add_spacer(height=10)
+                dpg.add_spacer(height=12)
                 with dpg.group(horizontal=True):
                     dpg.add_button(
                         label="Buscar",
                         tag="btn_enviar",
                         callback=save_and_search_callback,
-                        width=150,
-                        height=40,
+                        width=180,
+                        height=48,
                     )
-                    dpg.add_progress_bar(tag="progress_bar", width=300, default_value=0)
+                    dpg.add_progress_bar(tag="progress_bar", width=360, default_value=0)
 
                 dpg.add_spacer(height=10)
                 dpg.add_text("", tag="status_label")
@@ -281,9 +315,12 @@ def create_gui():
                 dpg.add_button(
                     label="Actualizar Resultados", callback=show_results_callback
                 )
-                dpg.add_spacer(height=10)
-                with dpg.child_window(tag="results_container", height=-1):
-                    pass
+                dpg.add_spacer(height=12)
+                with dpg.child_window(tag="results_container", height=350):
+                    dpg.add_text(
+                        "Presione 'Actualizar Resultados' para cargar los datos",
+                        tag="results_placeholder",
+                    )
 
     dpg.set_primary_window("main_window", True)
     dpg.setup_dearpygui()

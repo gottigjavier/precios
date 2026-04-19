@@ -1,182 +1,82 @@
 {
   "productos": [
     {
-      "producto": "gaseosa",
-      "marca": "coca cola",
-      "tamaño": "2",
+      "producto": "fernet",
+      "marca": "branca",
+      "tamaño": "750 cc",
       "resultados": [
         {
-          "nombre": "Gaseosa Coca-cola Sabor Original 2.25 L",
-          "marca": "COCA COLA",
-          "precio": 5450.0,
-          "precio_original": 450413.0,
+          "nombre": "Fernet Edicion 180 Años X 750 Cc Branca",
+          "marca": "BRANCA",
+          "precio": 17200.0,
+          "precio_original": 1421488.0,
           "descuento": 98,
           "disponible": true,
-          "url": "https://www.vea.com.ar/gaseosa-coca-cola-sabor-original-2-25-l/p",
+          "url": "https://www.vea.com.ar/fernet-edicion-180-anos-x-750-cc-branca/p",
           "supermercado": "vea"
         },
         {
-          "nombre": "Gaseosa Coca Cola Sin Azucar 1.25lt",
-          "marca": "COCA COLA",
-          "precio": 2999.0,
-          "precio_original": 247851.0,
-          "descuento": 98,
+          "nombre": "Fernet Branca menta 750 cc.",
+          "marca": "Branca",
+          "precio": 12900.0,
+          "precio_original": 17200.0,
+          "descuento": 25,
           "disponible": true,
-          "url": "https://www.vea.com.ar/gaseosa-coca-cola-sin-azucar-1-25lt/p",
-          "supermercado": "vea"
-        },
-        {
-          "nombre": "Duopack Gaseosa Zero 2.25lt Coca Cola",
-          "marca": "COCA COLA",
-          "precio": 9050.0,
-          "precio_original": 747934.0,
-          "descuento": 98,
-          "disponible": true,
-          "url": "https://www.vea.com.ar/duopack-gaseosa-zero-2-25lt-coca-cola/p",
-          "supermercado": "vea"
-        },
-        {
-          "nombre": "Gaseosa Coca-Cola Zero 2,5 Lt.",
-          "marca": "COKE/COCACOLA",
-          "precio": 3036.0,
-          "precio_original": 3036.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-zero-25-lt-114912/p",
-          "supermercado": "dia"
-        },
-        {
-          "nombre": "Gaseosa Coca-Cola Sabor Original 2,5 Lt.",
-          "marca": "COKE/COCACOLA",
-          "precio": 2496.0,
-          "precio_original": 2496.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-original-2-5-lt-83209/p",
-          "supermercado": "dia"
-        },
-        {
-          "nombre": "Gaseosa Coca-Cola Sabor Liviano 2,25 Lt.",
-          "marca": "COKE/COCACOLA",
-          "precio": 5450.0,
-          "precio_original": 5450.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-liviano-225-lt-14835/p",
-          "supermercado": "dia"
-        },
-        {
-          "nombre": "Gaseosa Coca-Cola Zero 2.25 Lt.",
-          "marca": "COKE/COCACOLA",
-          "precio": 5450.0,
-          "precio_original": 5450.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-zero-225-lt-121537/p",
-          "supermercado": "dia"
-        },
-        {
-          "nombre": "Gaseosa Coca-Cola Sabor Original 2.25 Lt.",
-          "marca": "COKE/COCACOLA",
-          "precio": 5450.0,
-          "precio_original": 5450.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-original-225-lt-14837/p",
-          "supermercado": "dia"
-        },
-        {
-          "nombre": "Gaseosa Coca-Cola Sabor Original 237 Ml.",
-          "marca": "COKE/COCACOLA",
-          "precio": 1000.0,
-          "precio_original": 1000.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-original-237-ml-288421/p",
-          "supermercado": "dia"
-        },
-        {
-          "nombre": "Gaseosa cola Coca Cola sabor original 2,25 lts",
-          "marca": "Coca Cola",
-          "precio": 5450.0,
-          "precio_original": 5450.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-sabor-original-225-lts-30138/p",
+          "url": "https://www.carrefour.com.ar/fernet-branca-menta-750-cc/p",
           "supermercado": "carrefour"
         },
         {
-          "nombre": "Gaseosa cola Coca Cola 2,25 lts + gaseosa lima limón Sprite 2,25 lts",
-          "marca": "Coca Cola",
-          "precio": 8175.0,
-          "precio_original": 8175.0,
+          "nombre": "Fernet Branca botella 750 cc.",
+          "marca": "Branca",
+          "precio": 17200.0,
+          "precio_original": 17200.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-225-lts-plus-gaseosa-lima-limon-sprite-225-lts-292729/p",
+          "url": "https://www.carrefour.com.ar/fernet-branca-botella-750-cc/p",
           "supermercado": "carrefour"
         },
         {
-          "nombre": "Gaseosa cola Coca Cola regular 2,25 lts + Gaseosa cola Coca Cola Zero 2,25 lts",
-          "marca": "Coca Cola",
-          "precio": 8175.0,
-          "precio_original": 8175.0,
+          "nombre": "Fernet Branca 750 cc.",
+          "marca": "Branca",
+          "precio": 0.0,
+          "precio_original": 0.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-regular-225-lts-plus-gaseosa-cola-coca-cola-zero-225-lts-671029/p",
+          "url": "https://www.carrefour.com.ar/fernet-branca-750-cc/p",
           "supermercado": "carrefour"
         },
         {
-          "nombre": "Gaseosa cola Coca Cola Zero 2,25 lts",
-          "marca": "Coca Cola",
-          "precio": 5450.0,
-          "precio_original": 5450.0,
+          "nombre": "Fernet Branca edición mundial 750 cc.",
+          "marca": "Branca",
+          "precio": 3420.0,
+          "precio_original": 3420.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-zero-225-lts-393964/p",
+          "url": "https://www.carrefour.com.ar/gaseosa-tonica-paso-de-los-toros-sin-azucar--pet-15-lt-709646/p",
           "supermercado": "carrefour"
         },
         {
-          "nombre": "Gaseosa cola Coca Cola sabor liviano 2,25 lts",
-          "marca": "Coca Cola",
-          "precio": 5450.0,
-          "precio_original": 5450.0,
+          "nombre": "Fernet Branca estuche roblex 750 cc.",
+          "marca": "Branca",
+          "precio": 0.0,
+          "precio_original": 0.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-sabor-liviano-225-lts-159570/p",
+          "url": "https://www.carrefour.com.ar/fernet-branca-estuche-roblex-750-cc-699552-699552/p",
           "supermercado": "carrefour"
         },
         {
-          "nombre": "Gaseosa Coca Cola Mini 237ml",
-          "marca": "Coca Cola",
-          "precio": 999.0,
-          "precio_original": 999.0,
+          "nombre": "Fernet Branca 175 aniversario 750 cc.",
+          "marca": "Branca",
+          "precio": 0.0,
+          "precio_original": 0.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.masonline.com.ar/gaseosa-coca-cola-mini-237ml-2/p",
-          "supermercado": "masonline"
-        },
-        {
-          "nombre": "Gaseosa Coca Cola Zero 1.25 L",
-          "marca": "Coca Cola",
-          "precio": 2548.3,
-          "precio_original": 2998.0,
-          "descuento": 14,
-          "disponible": true,
-          "url": "https://www.masonline.com.ar/gaseosa-coca-cola-sin-azucares-1-25-lt-2/p",
-          "supermercado": "masonline"
-        },
-        {
-          "nombre": "Gaseosa Coca Cola Zero 2.25 L",
-          "marca": "Coca Cola",
-          "precio": 5449.0,
-          "precio_original": 5449.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://www.masonline.com.ar/gaseosa-coca-cola-sin-azucar-2-25-lt-2/p",
-          "supermercado": "masonline"
+          "url": "https://www.carrefour.com.ar/fernet-branca-175-aniversario-750-cc/p",
+          "supermercado": "carrefour"
         }
       ]
     }
   ],
-  "timestamp": "2026-04-19T12:34:50.353836"
+  "timestamp": "2026-04-20T20:31:45.032449"
 }

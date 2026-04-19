@@ -4,12 +4,13 @@ import time
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
-BASE_DIR = Path("/home/javier/programacion/python/supermercados")
-PRODUCTS_FILE = BASE_DIR / "products.json"
-SUPERMERCADOS_FILE = BASE_DIR / "supermercados.json"
-RESULTADOS_JSON = BASE_DIR / "resultados.json"
-RESULTADOS_CSV = BASE_DIR / "resultados.csv"
-BUSCA_SCRIPT = BASE_DIR / "busca.fish"
+from paths import (
+    PRODUCTS_FILE,
+    SUPERMERCADOS_FILE,
+    RESULTADOS_JSON,
+    RESULTADOS_CSV,
+    BUSCA_SCRIPT,
+)
 
 
 def save_products(
@@ -86,6 +87,7 @@ def load_results(resultados_file: Optional[Path] = None) -> List[Dict[str, Any]]
                     "marca": resultado.get("marca", ""),
                     "precio": resultado.get("precio", ""),
                     "supermercado": resultado.get("supermercado", ""),
+                    "url": resultado.get("url", ""),
                 }
             )
 
