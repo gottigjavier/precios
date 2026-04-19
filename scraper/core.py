@@ -1,8 +1,4 @@
-import json
-import time
-from pathlib import Path
 from typing import List
-from concurrent.futures import ThreadPoolExecutor
 
 from .sites.base import BaseScraper, load_supermarkets
 
@@ -34,6 +30,7 @@ def filtrar_resultados(results: List, producto: str, marca: str, tamaño: str) -
         return []
 
     filtered = []
+    producto_norm = normalize(producto)
     marca_norm = normalize(marca)
     tamaño_input = (tamaño or "").lower().strip()
 
@@ -43,6 +40,8 @@ def filtrar_resultados(results: List, producto: str, marca: str, tamaño: str) -
 
     for r in results:
         nombre_norm = normalize(r.nombre)
+
+        matches_producto = producto_norm and producto_norm in nombre_norm
 
         if t_num and t_unit:
             matches_size = t_num in nombre_norm and t_unit in nombre_norm
@@ -58,7 +57,7 @@ def filtrar_resultados(results: List, producto: str, marca: str, tamaño: str) -
                 marca_r and marca_norm in marca_r
             )
 
-        if matches_size and matches_marca:
+        if matches_producto and matches_size and matches_marca:
             filtered.append(r)
 
     return filtered

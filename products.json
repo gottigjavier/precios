@@ -1,12 +1,7 @@
 [
   {
-    "producto": "arroz",
-    "marca": "gallo",
-    "tama\u00f1o": "1 kg"
-  },
-  {
-    "producto": "pure de tomates",
-    "marca": "arcor",
-    "tama\u00f1o": "520 g"
+    "producto": "gaseosa",
+    "marca": "coca cola",
+    "tama\u00f1o": "2"
   }
 ]

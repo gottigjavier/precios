@@ -1,119 +1,182 @@
 {
   "productos": [
     {
-      "producto": "arroz",
-      "marca": "gallo",
-      "tamaño": "1 kg",
+      "producto": "gaseosa",
+      "marca": "coca cola",
+      "tamaño": "2",
       "resultados": [
         {
-          "nombre": "Arroz Parboil Gallo 1 Kg.",
-          "marca": "GALLO",
-          "precio": 2500.0,
-          "precio_original": 2500.0,
+          "nombre": "Gaseosa Coca-cola Sabor Original 2.25 L",
+          "marca": "COCA COLA",
+          "precio": 5450.0,
+          "precio_original": 450413.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/gaseosa-coca-cola-sabor-original-2-25-l/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Gaseosa Coca Cola Sin Azucar 1.25lt",
+          "marca": "COCA COLA",
+          "precio": 2999.0,
+          "precio_original": 247851.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/gaseosa-coca-cola-sin-azucar-1-25lt/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Duopack Gaseosa Zero 2.25lt Coca Cola",
+          "marca": "COCA COLA",
+          "precio": 9050.0,
+          "precio_original": 747934.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/duopack-gaseosa-zero-2-25lt-coca-cola/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Gaseosa Coca-Cola Zero 2,5 Lt.",
+          "marca": "COKE/COCACOLA",
+          "precio": 3036.0,
+          "precio_original": 3036.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/arroz-parboil-gallo-1-kg-295459/p",
+          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-zero-25-lt-114912/p",
           "supermercado": "dia"
         },
         {
-          "nombre": "Arroz Gallo Doble Carolina Selección 1 Kg",
-          "marca": "Gallo",
-          "precio": 3829.0,
-          "precio_original": 3829.0,
+          "nombre": "Gaseosa Coca-Cola Sabor Original 2,5 Lt.",
+          "marca": "COKE/COCACOLA",
+          "precio": 2496.0,
+          "precio_original": 2496.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.masonline.com.ar/arroz-gallo-doble-carolina-seleccion-1kg-2/p",
-          "supermercado": "masonline"
-        },
-        {
-          "nombre": "Arroz Gallo Oro 1 Kg",
-          "marca": "Gallo",
-          "precio": 0.0,
-          "precio_original": 0.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://www.masonline.com.ar/arroz-gallo-oro-1-kg-2-2/p",
-          "supermercado": "masonline"
-        },
-        {
-          "nombre": "Arroz Doble Carolina Selección 1 Kg Gallo",
-          "marca": "GALLO",
-          "precio": 3850.0,
-          "precio_original": 318182.0,
-          "descuento": 98,
-          "disponible": true,
-          "url": "https://www.vea.com.ar/arroz-gallo-doble-carolina-selec-x1kg/p",
-          "supermercado": "vea"
-        },
-        {
-          "nombre": "Arroz Grano Largo Parboil 1 Kg Gallo Oro",
-          "marca": "GALLO",
-          "precio": 2600.0,
-          "precio_original": 214876.0,
-          "descuento": 98,
-          "disponible": true,
-          "url": "https://www.vea.com.ar/arroz-parboil-en-bolsa-1-kg-gallo-oro/p",
-          "supermercado": "vea"
-        },
-        {
-          "nombre": "Arroz Gallo Oro Selec Paraboil X1kg",
-          "marca": "GALLO",
-          "precio": 3130.0,
-          "precio_original": 258678.0,
-          "descuento": 98,
-          "disponible": true,
-          "url": "https://www.vea.com.ar/arroz-gallo-oro-selec-paraboil-x1kg/p",
-          "supermercado": "vea"
-        }
-      ]
-    },
-    {
-      "producto": "pure de tomates",
-      "marca": "arcor",
-      "tamaño": "520 g",
-      "resultados": [
-        {
-          "nombre": "Puré De Tomate Arcor 520 Gr.",
-          "marca": "ARCOR",
-          "precio": 870.0,
-          "precio_original": 1028.0,
-          "descuento": 15,
-          "disponible": true,
-          "url": "https://diaonline.supermercadosdia.com.ar/pure-de-tomate-arcor-520-gr-56121/p",
+          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-original-2-5-lt-83209/p",
           "supermercado": "dia"
         },
         {
-          "nombre": "Puré De Tomate Arcor 520 G",
-          "marca": "Arcor",
-          "precio": 1129.0,
-          "precio_original": 1129.0,
+          "nombre": "Gaseosa Coca-Cola Sabor Liviano 2,25 Lt.",
+          "marca": "COKE/COCACOLA",
+          "precio": 5450.0,
+          "precio_original": 5450.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.masonline.com.ar/pure-de-tomatate-arcor-520-g-2/p",
+          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-liviano-225-lt-14835/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Gaseosa Coca-Cola Zero 2.25 Lt.",
+          "marca": "COKE/COCACOLA",
+          "precio": 5450.0,
+          "precio_original": 5450.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-zero-225-lt-121537/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Gaseosa Coca-Cola Sabor Original 2.25 Lt.",
+          "marca": "COKE/COCACOLA",
+          "precio": 5450.0,
+          "precio_original": 5450.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-original-225-lt-14837/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Gaseosa Coca-Cola Sabor Original 237 Ml.",
+          "marca": "COKE/COCACOLA",
+          "precio": 1000.0,
+          "precio_original": 1000.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://diaonline.supermercadosdia.com.ar/gaseosa-coca-cola-sabor-original-237-ml-288421/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Gaseosa cola Coca Cola sabor original 2,25 lts",
+          "marca": "Coca Cola",
+          "precio": 5450.0,
+          "precio_original": 5450.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-sabor-original-225-lts-30138/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Gaseosa cola Coca Cola 2,25 lts + gaseosa lima limón Sprite 2,25 lts",
+          "marca": "Coca Cola",
+          "precio": 8175.0,
+          "precio_original": 8175.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-225-lts-plus-gaseosa-lima-limon-sprite-225-lts-292729/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Gaseosa cola Coca Cola regular 2,25 lts + Gaseosa cola Coca Cola Zero 2,25 lts",
+          "marca": "Coca Cola",
+          "precio": 8175.0,
+          "precio_original": 8175.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-regular-225-lts-plus-gaseosa-cola-coca-cola-zero-225-lts-671029/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Gaseosa cola Coca Cola Zero 2,25 lts",
+          "marca": "Coca Cola",
+          "precio": 5450.0,
+          "precio_original": 5450.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-zero-225-lts-393964/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Gaseosa cola Coca Cola sabor liviano 2,25 lts",
+          "marca": "Coca Cola",
+          "precio": 5450.0,
+          "precio_original": 5450.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/gaseosa-cola-coca-cola-sabor-liviano-225-lts-159570/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Gaseosa Coca Cola Mini 237ml",
+          "marca": "Coca Cola",
+          "precio": 999.0,
+          "precio_original": 999.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.masonline.com.ar/gaseosa-coca-cola-mini-237ml-2/p",
           "supermercado": "masonline"
         },
         {
-          "nombre": "Puré de Tomate Clásico 520 Grs Arcor",
-          "marca": "LA CAMPAGNOLA",
-          "precio": 1250.0,
-          "precio_original": 103306.0,
-          "descuento": 98,
+          "nombre": "Gaseosa Coca Cola Zero 1.25 L",
+          "marca": "Coca Cola",
+          "precio": 2548.3,
+          "precio_original": 2998.0,
+          "descuento": 14,
           "disponible": true,
-          "url": "https://www.vea.com.ar/pure-de-tomate-arcor-x-520-gr/p",
-          "supermercado": "vea"
+          "url": "https://www.masonline.com.ar/gaseosa-coca-cola-sin-azucares-1-25-lt-2/p",
+          "supermercado": "masonline"
         },
         {
-          "nombre": "Puré De Tomate Arcor 520 Gr",
-          "marca": "ARCOR",
-          "precio": 93.15,
-          "precio_original": 7698.0,
-          "descuento": 98,
+          "nombre": "Gaseosa Coca Cola Zero 2.25 L",
+          "marca": "Coca Cola",
+          "precio": 5449.0,
+          "precio_original": 5449.0,
+          "descuento": null,
           "disponible": true,
-          "url": "https://www.vea.com.ar/pure-de-tomate-arcor-520-gr/p",
-          "supermercado": "vea"
+          "url": "https://www.masonline.com.ar/gaseosa-coca-cola-sin-azucar-2-25-lt-2/p",
+          "supermercado": "masonline"
         }
       ]
     }
   ],
-  "timestamp": "2026-04-18T22:49:46.511927"
+  "timestamp": "2026-04-19T12:34:50.353836"
 }

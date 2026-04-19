@@ -1,9 +1,10 @@
-import tempfile
 import json
+import tempfile
+import unittest
 from pathlib import Path
 
 
-class TestGUIComponents:
+class TestGUIComponents(unittest.TestCase):
     def test_supermarkets_loaded_from_file(self):
         from gui import load_supermarkets_data
 
@@ -20,9 +21,9 @@ class TestGUIComponents:
 
             mercados = load_supermarkets_data(str(mercados_file))
 
-            assert len(mercados) == 2
-            assert mercados[0]["id"] == "masonline"
-            assert mercados[0]["name"] == "MASOnline"
+            self.assertEqual(len(mercados), 2)
+            self.assertEqual(mercados[0]["id"], "masonline")
+            self.assertEqual(mercados[0]["name"], "MASOnline")
 
     def test_results_loaded_from_file(self):
         from gui import load_results_data
@@ -56,11 +57,14 @@ class TestGUIComponents:
 
             rows = load_results_data(str(resultados_file))
 
-            assert len(rows) == 2
-            assert rows[0]["producto"] == "Producto 1"
-            assert rows[1]["producto"] == "Producto 2"
+            self.assertEqual(len(rows), 2)
+            self.assertEqual(rows[0]["producto"], "Producto 1")
+            self.assertEqual(rows[1]["producto"], "Producto 2")
 
     def test_gui_imports(self):
-        import main_gui
+        try:
+            import main_gui
 
-        assert main_gui is not None
+            self.assertIsNotNone(main_gui)
+        except ModuleNotFoundError:
+            self.skipTest("dearpygui not installed")

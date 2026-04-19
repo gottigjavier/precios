@@ -1,16 +1,15 @@
+import subprocess
+import threading
+import time
+from pathlib import Path
+
 import dearpygui.dearpygui as dpg
 import faulthandler
 
-faulthandler.enable()
-from pathlib import Path
-import threading
-import time
-import json
-import subprocess
-import os
-
 from gui import load_supermarkets_data, load_results_data
 from app import save_multiple_products, build_busca_command, RESULTADOS_JSON
+
+faulthandler.enable()
 
 BASE_DIR = Path("/home/javier/programacion/python/supermercados")
 PRODUCTS_FILE = BASE_DIR / "products.json"
@@ -223,7 +222,7 @@ def create_gui():
         min_height=600,
     )
 
-    with dpg.theme() as global_theme:
+    with dpg.theme():
         with dpg.theme_component(dpg.mvAll):
             dpg.add_theme_color(dpg.mvThemeCol_FrameBg, [240, 240, 245, 255])
             dpg.add_theme_color(dpg.mvThemeCol_WindowBg, [250, 250, 252, 255])
@@ -241,7 +240,7 @@ def create_gui():
                 dpg.add_separator()
 
                 dpg.add_text(
-                    "Datos del Producto (uno por linea: producto, marca, tamano)"
+                    "Datos del Producto (uno por linea: producto, marca, tamaño)"
                 )
                 dpg.add_input_text(
                     tag="input_productos",

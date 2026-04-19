@@ -1,9 +1,24 @@
 import json
 import tempfile
+import unittest
 from pathlib import Path
 
+try:
+    import typer  # noqa: F401
 
-class TestMultipleProducts:
+    HAS_TYPER = True
+except ImportError:
+    HAS_TYPER = False
+
+try:
+    from fake_useragent import UserAgent  # noqa: F401
+
+    HAS_FAKE_USERAGENT = True
+except ImportError:
+    HAS_FAKE_USERAGENT = False
+
+
+class TestMultipleProducts(unittest.TestCase):
     def test_save_multiple_products(self):
         from app import save_multiple_products
 
@@ -19,9 +34,9 @@ class TestMultipleProducts:
             with open(products_file) as f:
                 data = json.load(f)
 
-            assert len(data) == 2
-            assert data[0]["producto"] == "leche"
-            assert data[1]["producto"] == "pan"
+            self.assertEqual(len(data), 2)
+            self.assertEqual(data[0]["producto"], "leche")
+            self.assertEqual(data[1]["producto"], "pan")
 
     def test_save_multiple_products_empty_list(self):
         from app import save_multiple_products
@@ -34,10 +49,10 @@ class TestMultipleProducts:
             with open(products_file) as f:
                 data = json.load(f)
 
-            assert data == []
+            self.assertEqual(data, [])
 
 
-class TestProductsJSON:
+class TestProductsJSON(unittest.TestCase):
     def test_save_products_overwrites_file(self):
         from app import save_products
 
@@ -47,14 +62,16 @@ class TestProductsJSON:
             save_products("leche", "la serenisima", "1L", products_file)
             with open(products_file) as f:
                 data = json.load(f)
-            assert data == [
-                {"producto": "leche", "marca": "la serenisima", "tamaño": "1L"}
-            ]
+            self.assertEqual(
+                data, [{"producto": "leche", "marca": "la serenisima", "tamaño": "1L"}]
+            )
 
             save_products("pan", "bimbo", "500g", products_file)
             with open(products_file) as f:
                 data = json.load(f)
-            assert data == [{"producto": "pan", "marca": "bimbo", "tamaño": "500g"}]
+            self.assertEqual(
+                data, [{"producto": "pan", "marca": "bimbo", "tamaño": "500g"}]
+            )
 
     def test_products_format(self):
         from app import save_products
@@ -67,16 +84,16 @@ class TestProductsJSON:
             with open(products_file) as f:
                 data = json.load(f)
 
-            assert len(data) == 1
-            assert "producto" in data[0]
-            assert "marca" in data[0]
-            assert "tamaño" in data[0]
-            assert data[0]["producto"] == "test_product"
-            assert data[0]["marca"] == "test_brand"
-            assert data[0]["tamaño"] == "test_size"
+            self.assertEqual(len(data), 1)
+            self.assertIn("producto", data[0])
+            self.assertIn("marca", data[0])
+            self.assertIn("tamaño", data[0])
+            self.assertEqual(data[0]["producto"], "test_product")
+            self.assertEqual(data[0]["marca"], "test_brand")
+            self.assertEqual(data[0]["tamaño"], "test_size")
 
 
-class TestSupermarkets:
+class TestSupermarkets(unittest.TestCase):
     def test_load_supermarkets(self):
         from app import load_supermarkets
 
@@ -93,23 +110,23 @@ class TestSupermarkets:
 
             mercados = load_supermarkets(mercados_file)
 
-            assert len(mercados) == 2
-            assert mercados[0]["id"] == "masonline"
-            assert mercados[0]["name"] == "MASOnline"
-            assert mercados[1]["id"] == "dia"
-            assert mercados[1]["name"] == "DIA"
+            self.assertEqual(len(mercados), 2)
+            self.assertEqual(mercados[0]["id"], "masonline")
+            self.assertEqual(mercados[0]["name"], "MASOnline")
+            self.assertEqual(mercados[1]["id"], "dia")
+            self.assertEqual(mercados[1]["name"], "DIA")
 
     def test_load_real_supermarkets(self):
         from app import load_supermarkets
 
         mercados = load_supermarkets()
 
-        assert len(mercados) == 4
-        assert any(m["id"] == "masonline" for m in mercados)
-        assert any(m["id"] == "dia" for m in mercados)
+        self.assertEqual(len(mercados), 4)
+        self.assertTrue(any(m["id"] == "masonline" for m in mercados))
+        self.assertTrue(any(m["id"] == "dia" for m in mercados))
 
 
-class TestResultsParser:
+class TestResultsParser(unittest.TestCase):
     def test_parse_results_json(self):
         from app import load_results
 
@@ -139,11 +156,11 @@ class TestResultsParser:
 
             rows = load_results(resultados_file)
 
-            assert len(rows) == 1
-            assert rows[0]["producto"] == "Leche 1L"
-            assert rows[0]["marca"] == "Serenisima"
-            assert rows[0]["precio"] == 500
-            assert rows[0]["supermercado"] == "masonline"
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["producto"], "Leche 1L")
+            self.assertEqual(rows[0]["marca"], "Serenisima")
+            self.assertEqual(rows[0]["precio"], 500)
+            self.assertEqual(rows[0]["supermercado"], "masonline")
 
     def test_parse_multiple_results(self):
         from app import load_results
@@ -189,18 +206,18 @@ class TestResultsParser:
 
             rows = load_results(resultados_file)
 
-            assert len(rows) == 3
+            self.assertEqual(len(rows), 3)
 
 
-class TestBuscaFish:
+class TestBuscaFish(unittest.TestCase):
     def test_build_command_with_supermarkets(self):
         from app import build_busca_command
 
         cmd = build_busca_command(["masonline", "dia"])
 
         cmd_str = " ".join(cmd)
-        assert "masonline" in cmd_str
-        assert "dia" in cmd_str
+        self.assertIn("masonline", cmd_str)
+        self.assertIn("dia", cmd_str)
 
     def test_build_command_default_supermarkets(self):
         from app import build_busca_command
@@ -208,4 +225,122 @@ class TestBuscaFish:
         cmd = build_busca_command([])
 
         cmd_str = " ".join(cmd)
-        assert "--supermarkets" in cmd_str
+        self.assertIn("--supermarkets", cmd_str)
+
+
+class TestFilterResults(unittest.TestCase):
+    @unittest.skipUnless(HAS_TYPER, "typer not installed")
+    def test_filter_results_by_min_price(self):
+        from main import filter_results
+
+        results = [
+            {"precio": 100, "disponible": True},
+            {"precio": 50, "disponible": True},
+            {"precio": 200, "disponible": True},
+        ]
+        filtered = filter_results(results, min_price=75)
+        self.assertEqual(len(filtered), 2)
+
+    @unittest.skipUnless(HAS_TYPER, "typer not installed")
+    def test_filter_results_available_only(self):
+        from main import filter_results
+
+        results = [
+            {"precio": 100, "disponible": True},
+            {"precio": 50, "disponible": False},
+            {"precio": 200, "disponible": True},
+        ]
+        filtered = filter_results(results, available_only=True)
+        self.assertEqual(len(filtered), 2)
+
+    @unittest.skipUnless(HAS_TYPER, "typer not installed")
+    def test_filter_results_combined(self):
+        from main import filter_results
+
+        results = [
+            {"precio": 100, "disponible": True},
+            {"precio": 50, "disponible": False},
+            {"precio": 200, "disponible": True},
+        ]
+        filtered = filter_results(results, min_price=75, available_only=True)
+        self.assertEqual(len(filtered), 2)
+        self.assertTrue(all(r["precio"] >= 75 for r in filtered))
+        self.assertTrue(all(r["disponible"] for r in filtered))
+
+
+class TestScraperCore(unittest.TestCase):
+    @unittest.skipUnless(HAS_FAKE_USERAGENT, "fake_useragent not installed")
+    def test_normalize_removes_accents(self):
+        from scraper.core import normalize
+
+        result = normalize("café")
+        self.assertEqual(result, "cafe")
+
+    @unittest.skipUnless(HAS_FAKE_USERAGENT, "fake_useragent not installed")
+    def test_normalize_lowercases(self):
+        from scraper.core import normalize
+
+        result = normalize("HOLA")
+        self.assertEqual(result, "hola")
+
+    @unittest.skipUnless(HAS_FAKE_USERAGENT, "fake_useragent not installed")
+    def test_normalize_removes_spaces(self):
+        from scraper.core import normalize
+
+        result = normalize("hola mundo")
+        self.assertEqual(result, "holamundo")
+
+    @unittest.skipUnless(HAS_FAKE_USERAGENT, "fake_useragent not installed")
+    def test_filtrar_resultados_empty(self):
+        from scraper.core import filtrar_resultados
+
+        results = filtrar_resultados([], "leche", "serenisima", "1L")
+        self.assertEqual(results, [])
+
+    @unittest.skipUnless(HAS_FAKE_USERAGENT, "fake_useragent not installed")
+    def test_filtrar_resultados_filters_by_producto(self):
+        from scraper.core import filtrar_resultados
+        from scraper.sites.base import ProductResult
+
+        results = [
+            ProductResult(
+                "Leche descremada 1L",
+                "Serenisima",
+                500,
+                None,
+                None,
+                True,
+                "",
+                "masonline",
+            ),
+            ProductResult(
+                "Yogur bebible 1L", "Serenisima", 300, None, None, True, "", "masonline"
+            ),
+            ProductResult(
+                "Leche entera 1L", "Pilsen", 450, None, None, True, "", "masonline"
+            ),
+        ]
+        filtered = filtrar_resultados(results, "leche", "", "1L")
+        self.assertEqual(len(filtered), 2)
+        for r in filtered:
+            self.assertIn("leche", r.nombre.lower())
+
+
+class TestBaseScraper(unittest.TestCase):
+    @unittest.skipUnless(HAS_FAKE_USERAGENT, "fake_useragent not installed")
+    def test_product_result_dataclass(self):
+        from scraper.sites.base import ProductResult
+
+        result = ProductResult(
+            nombre="Test Product",
+            marca="Test Brand",
+            precio=100.0,
+            precio_original=150.0,
+            descuento=33,
+            disponible=True,
+            url="https://example.com",
+            supermercado="test",
+        )
+        self.assertEqual(result.nombre, "Test Product")
+        self.assertEqual(result.precio, 100.0)
+        self.assertEqual(result.descuento, 33)

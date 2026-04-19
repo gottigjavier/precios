@@ -1,11 +1,9 @@
 import json
-import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Annotated, Optional
 
 import typer
-from click import Choice
 from scraper.core import ScraperEngine
 
 app = typer.Typer()
