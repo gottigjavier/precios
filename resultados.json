@@ -1,0 +1,119 @@
+{
+  "productos": [
+    {
+      "producto": "arroz",
+      "marca": "gallo",
+      "tamaño": "1 kg",
+      "resultados": [
+        {
+          "nombre": "Arroz Parboil Gallo 1 Kg.",
+          "marca": "GALLO",
+          "precio": 2500.0,
+          "precio_original": 2500.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://diaonline.supermercadosdia.com.ar/arroz-parboil-gallo-1-kg-295459/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Arroz Gallo Doble Carolina Selección 1 Kg",
+          "marca": "Gallo",
+          "precio": 3829.0,
+          "precio_original": 3829.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.masonline.com.ar/arroz-gallo-doble-carolina-seleccion-1kg-2/p",
+          "supermercado": "masonline"
+        },
+        {
+          "nombre": "Arroz Gallo Oro 1 Kg",
+          "marca": "Gallo",
+          "precio": 0.0,
+          "precio_original": 0.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.masonline.com.ar/arroz-gallo-oro-1-kg-2-2/p",
+          "supermercado": "masonline"
+        },
+        {
+          "nombre": "Arroz Doble Carolina Selección 1 Kg Gallo",
+          "marca": "GALLO",
+          "precio": 3850.0,
+          "precio_original": 318182.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/arroz-gallo-doble-carolina-selec-x1kg/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Arroz Grano Largo Parboil 1 Kg Gallo Oro",
+          "marca": "GALLO",
+          "precio": 2600.0,
+          "precio_original": 214876.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/arroz-parboil-en-bolsa-1-kg-gallo-oro/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Arroz Gallo Oro Selec Paraboil X1kg",
+          "marca": "GALLO",
+          "precio": 3130.0,
+          "precio_original": 258678.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/arroz-gallo-oro-selec-paraboil-x1kg/p",
+          "supermercado": "vea"
+        }
+      ]
+    },
+    {
+      "producto": "pure de tomates",
+      "marca": "arcor",
+      "tamaño": "520 g",
+      "resultados": [
+        {
+          "nombre": "Puré De Tomate Arcor 520 Gr.",
+          "marca": "ARCOR",
+          "precio": 870.0,
+          "precio_original": 1028.0,
+          "descuento": 15,
+          "disponible": true,
+          "url": "https://diaonline.supermercadosdia.com.ar/pure-de-tomate-arcor-520-gr-56121/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Puré De Tomate Arcor 520 G",
+          "marca": "Arcor",
+          "precio": 1129.0,
+          "precio_original": 1129.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.masonline.com.ar/pure-de-tomatate-arcor-520-g-2/p",
+          "supermercado": "masonline"
+        },
+        {
+          "nombre": "Puré de Tomate Clásico 520 Grs Arcor",
+          "marca": "LA CAMPAGNOLA",
+          "precio": 1250.0,
+          "precio_original": 103306.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/pure-de-tomate-arcor-x-520-gr/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Puré De Tomate Arcor 520 Gr",
+          "marca": "ARCOR",
+          "precio": 93.15,
+          "precio_original": 7698.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/pure-de-tomate-arcor-520-gr/p",
+          "supermercado": "vea"
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-04-18T22:49:46.511927"
+}

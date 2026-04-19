@@ -1,0 +1,22 @@
+[
+  {
+    "id": "masonline",
+    "name": "MASOnline (Changomas)",
+    "base_url": "https://www.masonline.com.ar"
+  },
+  {
+    "id": "dia",
+    "name": "DIA Online",
+    "base_url": "https://diaonline.supermercadosdia.com.ar"
+  },
+  {
+    "id": "carrefour",
+    "name": "Carrefour",
+    "base_url": "https://www.carrefour.com.ar"
+  },
+  {
+    "id": "vea",
+    "name": "Vea",
+    "base_url": "https://www.vea.com.ar/"
+  }
+]

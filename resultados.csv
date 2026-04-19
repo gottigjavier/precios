@@ -1,0 +1,11 @@
+producto,marca,tamaño,supermercado,precio,precio_original,descuento,disponible,url
+"arroz","gallo","1 kg","dia","2500.0","2500.0","None","True","https://diaonline.supermercadosdia.com.ar/arroz-parboil-gallo-1-kg-295459/p"
+"arroz","gallo","1 kg","masonline","3829.0","3829.0","None","True","https://www.masonline.com.ar/arroz-gallo-doble-carolina-seleccion-1kg-2/p"
+"arroz","gallo","1 kg","masonline","0.0","0.0","None","True","https://www.masonline.com.ar/arroz-gallo-oro-1-kg-2-2/p"
+"arroz","gallo","1 kg","vea","3850.0","318182.0","98","True","https://www.vea.com.ar/arroz-gallo-doble-carolina-selec-x1kg/p"
+"arroz","gallo","1 kg","vea","2600.0","214876.0","98","True","https://www.vea.com.ar/arroz-parboil-en-bolsa-1-kg-gallo-oro/p"
+"arroz","gallo","1 kg","vea","3130.0","258678.0","98","True","https://www.vea.com.ar/arroz-gallo-oro-selec-paraboil-x1kg/p"
+"pure de tomates","arcor","520 g","dia","870.0","1028.0","15","True","https://diaonline.supermercadosdia.com.ar/pure-de-tomate-arcor-520-gr-56121/p"
+"pure de tomates","arcor","520 g","masonline","1129.0","1129.0","None","True","https://www.masonline.com.ar/pure-de-tomatate-arcor-520-g-2/p"
+"pure de tomates","arcor","520 g","vea","1250.0","103306.0","98","True","https://www.vea.com.ar/pure-de-tomate-arcor-x-520-gr/p"
+"pure de tomates","arcor","520 g","vea","93.15","7698.0","98","True","https://www.vea.com.ar/pure-de-tomate-arcor-520-gr/p"

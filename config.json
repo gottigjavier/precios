@@ -1,0 +1,14 @@
+{
+  "sites": {
+    "masonline": {
+      "name": "MASOnline (Changomas)",
+      "base_url": "https://www.masonline.com.ar",
+      "search_url": "https://www.masonline.com.ar/busca/?text={query}"
+    },
+    "dia": {
+      "name": "DIA Online",
+      "base_url": "https://diaonline.supermercadosdia.com.ar",
+      "search_url": "https://diaonline.supermercadosdia.com.ar/busca/?text={query}"
+    }
+  }
+}
