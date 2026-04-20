@@ -1,82 +1,142 @@
 {
   "productos": [
     {
-      "producto": "fernet",
-      "marca": "branca",
-      "tamaño": "750 cc",
+      "producto": "sal fina",
+      "marca": "celusal",
+      "tamaño": "500 g",
       "resultados": [
         {
-          "nombre": "Fernet Edicion 180 Años X 750 Cc Branca",
-          "marca": "BRANCA",
-          "precio": 17200.0,
-          "precio_original": 1421488.0,
+          "nombre": "Sal Fina 500 Grs Celusal",
+          "marca": "CELUSAL",
+          "precio": 1750.0,
+          "precio_original": 144628.0,
           "descuento": 98,
           "disponible": true,
-          "url": "https://www.vea.com.ar/fernet-edicion-180-anos-x-750-cc-branca/p",
+          "url": "https://www.vea.com.ar/sal-fina-celusal-500-gr-3/p",
           "supermercado": "vea"
         },
         {
-          "nombre": "Fernet Branca menta 750 cc.",
-          "marca": "Branca",
-          "precio": 12900.0,
-          "precio_original": 17200.0,
+          "nombre": "Sal Fina 500 Grs Celusal",
+          "marca": "CELUSAL",
+          "precio": 1450.0,
+          "precio_original": 119835.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/sal-fina-celusal-500-gr/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Sal Fina 500 Grs Celusal",
+          "marca": "CELUSAL",
+          "precio": 4150.0,
+          "precio_original": 342975.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/sal-fina-celusal-500-gr-2/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Sal Fina Light 500 Grs Celusal",
+          "marca": "CELUSAL",
+          "precio": 5250.0,
+          "precio_original": 433884.0,
+          "descuento": 98,
+          "disponible": true,
+          "url": "https://www.vea.com.ar/sal-fina-celusal-light-500-gr/p",
+          "supermercado": "vea"
+        },
+        {
+          "nombre": "Sal fina Celusal 500 g.",
+          "marca": "Celusal",
+          "precio": 1685.0,
+          "precio_original": 1685.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/sal-fina-celusal-500-g/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Sal fina Celusal paquete 500 g.",
+          "marca": "Celusal",
+          "precio": 1459.0,
+          "precio_original": 1459.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/sal-fina-celusal-paquete-500-g/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Sal fina Celusal salero 500 g.",
+          "marca": "Celusal",
+          "precio": 4105.0,
+          "precio_original": 4105.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://www.carrefour.com.ar/sal-fina-celusal-salero-500-g/p",
+          "supermercado": "carrefour"
+        },
+        {
+          "nombre": "Sal Fina Estuche Celusal 500 Gr.",
+          "marca": "CELUSAL",
+          "precio": 1785.0,
+          "precio_original": 1785.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://diaonline.supermercadosdia.com.ar/sal-fina-estuche-celusal-500-gr-3333/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Sal Fina Celusal de mesa 500 Gr.",
+          "marca": "CELUSAL",
+          "precio": 4105.0,
+          "precio_original": 4105.0,
+          "descuento": null,
+          "disponible": true,
+          "url": "https://diaonline.supermercadosdia.com.ar/sal-fina-celusal-de-mesa-500-gr-15148/p",
+          "supermercado": "dia"
+        },
+        {
+          "nombre": "Sal Fina en Paquete Celusal 500 Gr.",
+          "marca": "CELUSAL",
+          "precio": 1160.0,
+          "precio_original": 1549.0,
           "descuento": 25,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/fernet-branca-menta-750-cc/p",
-          "supermercado": "carrefour"
+          "url": "https://diaonline.supermercadosdia.com.ar/sal-fina-en-paquete-celusal-500-gr-47582/p",
+          "supermercado": "dia"
         },
         {
-          "nombre": "Fernet Branca botella 750 cc.",
-          "marca": "Branca",
-          "precio": 17200.0,
-          "precio_original": 17200.0,
+          "nombre": "Sal Fina Celusal Estuche 500 Gr",
+          "marca": "Celusal",
+          "precio": 1879.0,
+          "precio_original": 1879.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/fernet-branca-botella-750-cc/p",
-          "supermercado": "carrefour"
+          "url": "https://www.masonline.com.ar/sal-fina-celusal-estuche-500-gr-2/p",
+          "supermercado": "masonline"
         },
         {
-          "nombre": "Fernet Branca 750 cc.",
-          "marca": "Branca",
-          "precio": 0.0,
-          "precio_original": 0.0,
+          "nombre": "Sal Fina Celusal Paquete 500 Gr",
+          "marca": "Celusal",
+          "precio": 1559.0,
+          "precio_original": 1559.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/fernet-branca-750-cc/p",
-          "supermercado": "carrefour"
+          "url": "https://www.masonline.com.ar/sal-fina-celusal-paquete-500-gr-2/p",
+          "supermercado": "masonline"
         },
         {
-          "nombre": "Fernet Branca edición mundial 750 cc.",
-          "marca": "Branca",
-          "precio": 3420.0,
-          "precio_original": 3420.0,
+          "nombre": "Sal Fina Plus Celusal Estuche 500 Gr",
+          "marca": "Celusal",
+          "precio": 2439.0,
+          "precio_original": 2439.0,
           "descuento": null,
           "disponible": true,
-          "url": "https://www.carrefour.com.ar/gaseosa-tonica-paso-de-los-toros-sin-azucar--pet-15-lt-709646/p",
-          "supermercado": "carrefour"
-        },
-        {
-          "nombre": "Fernet Branca estuche roblex 750 cc.",
-          "marca": "Branca",
-          "precio": 0.0,
-          "precio_original": 0.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://www.carrefour.com.ar/fernet-branca-estuche-roblex-750-cc-699552-699552/p",
-          "supermercado": "carrefour"
-        },
-        {
-          "nombre": "Fernet Branca 175 aniversario 750 cc.",
-          "marca": "Branca",
-          "precio": 0.0,
-          "precio_original": 0.0,
-          "descuento": null,
-          "disponible": true,
-          "url": "https://www.carrefour.com.ar/fernet-branca-175-aniversario-750-cc/p",
-          "supermercado": "carrefour"
+          "url": "https://www.masonline.com.ar/sal-fina-plus-celusal-estuche-500-gr-2/p",
+          "supermercado": "masonline"
         }
       ]
     }
   ],
-  "timestamp": "2026-04-20T20:31:45.032449"
+  "timestamp": "2026-04-20T22:09:36.735075"
 }

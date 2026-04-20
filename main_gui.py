@@ -316,7 +316,7 @@ def create_gui():
                     label="Actualizar Resultados", callback=show_results_callback
                 )
                 dpg.add_spacer(height=12)
-                with dpg.child_window(tag="results_container", height=350):
+                with dpg.child_window(tag="results_container", height=600):
                     dpg.add_text(
                         "Presione 'Actualizar Resultados' para cargar los datos",
                         tag="results_placeholder",

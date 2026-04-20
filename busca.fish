@@ -1,10 +1,11 @@
 #!/usr/bin/env fish
 
-# cd a donde están los scripts
-cd /home/javier/programacion/python/supermercados
+# cd al directorio del script
+set SCRIPT_DIR (dirname (status filename))
+cd $SCRIPT_DIR
 
 # En products.json está los productos a buscar
-# Lo supermercados están listados en el comando y detallados en supermercados.json. Debe coincidir el nombre listado con el value de la key "id"
+# Lo supermercados están listados en el comando y detallados en supermercados.json. Debe coincidir el nombreitado con el value de la key "id"
 # Argumento: --supermarkets para especificar los supermercados a buscar (comma-separated)
 # Si no se pasa, usa masonline,dia,carrefour,vea por defecto
 
