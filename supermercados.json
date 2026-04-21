@@ -1,22 +1,22 @@
 [
   {
-    "id": "masonline",
-    "name": "MASOnline (Changomas)",
-    "base_url": "https://www.masonline.com.ar"
+    "id": "supermercado1",
+    "name": "Supermercado 1",
+    "base_url": "https://www.supermercado1.com.ar"
   },
   {
-    "id": "dia",
-    "name": "DIA Online",
-    "base_url": "https://diaonline.supermercadosdia.com.ar"
+    "id": "supermercado2",
+    "name": "Supermercado 2",
+    "base_url": "https://supermercado2.com.ar"
   },
   {
-    "id": "carrefour",
-    "name": "Carrefour",
-    "base_url": "https://www.carrefour.com.ar"
+    "id": "supermercado3",
+    "name": "Supermercado 3",
+    "base_url": "https://www.supermercado3.com.ar"
   },
   {
-    "id": "vea",
-    "name": "Vea",
-    "base_url": "https://www.vea.com.ar/"
+    "id": "supermercado4",
+    "name": "Supermercado 4",
+    "base_url": "https://www.supermercado4.com.ar/"
   }
 ]

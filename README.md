@@ -1,18 +1,23 @@
 # Buscador de Precios de Supermercados
 
-
 ---
 
 > ## Aviso Legal
-> Este proyecto es para uso personal y educativo. Los precios mostrados son los publicados (por lo tanto públicos) por cada supermercado. Use responsablemente y verifique los Términos y Condiciones de cada sitio. Todas las marcas son propiedad de sus dueños de acuerdo a las leyes de copyright. Al contrario de lo que pueda deducirse a primera vista, el proyecto no desalienta la visita a los sitios web. Por el contrario, incluye enlaces directos a los productos mostrados en la tabla de resultados.
+> Este proyecto es para uso personal y educativo.
+> Para evitar inconvenientes legales se utilizan datos genéricos en el archivo **supermercados.json**.
+> Para que la app funcione debe proporcionar las URL de los sitios de los supermercados a evaluar. Use responsablemente y verifique los Términos y Condiciones de cada sitio.
+
+**[Agregar URL de supermercados](#lista)**
 
 ---
 
 La Argentina viene de un pasado de alta inflación y está en un proceso de transición al libre mercado. Esto deriva en una diferencia, a veces marcada, de precio en el mismo producto según el comercio que lo ofrezca.
 
-Generalmente, antes de una compra importante, y como creo aún hacen muchos, ingresaba a los sitios de los supermercados recorriendo pestañas del navegador, haciendo búsquedas y clicks en productos y registrando cada precio para luego comparar, lo que podía llevar varios minutos.
+Si se intenta realizar un compra inteligente, sobre todo antes de una importante, se ingresa a los sitios online de los supermercados recorriendo pestañas del navegador, haciendo búsquedas y clicks en productos, y registrando cada precio para luego comparar, lo que se vuelve tedioso y puede llevar demasiado tiempo.
 
-Por esa razón construí este proyecto en Python para buscar en segundos y comparar precios de productos en múltiples supermercados online (Changomas, DIA, Carrefour, Vea, etc.).
+Construí este proyecto en Python que permite buscar en segundos y comparar precios de productos en múltiples supermercados online.
+
+Comenzó como una serie de scripts sin intefaz gráfica que guardaba los resultados en un archivo .csv para ser consumidos por una platilla de cálculo. Luego, para bajar la barrera técnica implementé la interfaz gráfica. Por esa razón encontrarán que el flujo del código es como es.
 
 ---
 
@@ -29,6 +34,8 @@ Por esa razón construí este proyecto en Python para buscar en segundos y compa
 
 - Python 3.10+
 - [Fish Shell](https://fishshell.com/) (para ejecutar el script)
+> [!caution]
+> Para otros lenguajes de shell deberá adaptar los archivos **busca.fish** y **buscar.fish**
 
 ---
 
@@ -69,20 +76,7 @@ Ejecutar el script `buscar.fish`:
 
 Este script activa automáticamente el entorno virtual y lanza la interfaz gráfica.
 
----
-
-
-## Capturas de Pantalla
-
-### Pestaña Búsqueda
-
-![Pestaña Búsqueda](screenshots/260420_precios_1.png)
-
-### Resultados
-
-![Resultados](screenshots/260420_precios_2.png)
-
-![Tabla de Precios](screenshots/260420_precios_3.png)
+Para salir de la app presionar la tecla **Esc** o ir al submenú **Archivo -> Salir** 
 
 ---
 
@@ -97,13 +91,13 @@ supermercados/
 ├── buscar.fish        # Script de lanzamiento
 ├── requirements.txt  # Dependencias
 ├── supermercados.json   # Lista de supermercados
-├── screenshots/     # Imágenes
+├── screenshots/     # Imágenes (no incluido en git)
 └── venv/            # Entorno virtual (no incluido en git)
 ```
 
 > Definir la lista de supermercados.
 >
-> La pantalla de búsqueda ofrece la oportunidad de elegir entre una lista de supermercados. Para ampliar la lista se debe agregar el supermercado al archivo *supermercados.json* respetando el formato JSON. Verificar que posea sitio web con las mismas características que los actuales.
+> La pantalla de búsqueda ofrece la oportunidad de elegir entre una lista de supermercados. Para conformar la lista se debe <a id="lista">**agregar la URL del sitio online** </a> de cada supermercado al archivo *supermercados.json* respetando el formato JSON. En la mayoría de los sitios online de los supermercados probados la URI sigue el mismo formato. Se debe verificar esta condición para que la búsqueda funciones correctamente.
 
 
 ---

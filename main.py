@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Annotated, Optional
 
 import typer
+
 from scraper.core import ScraperEngine
 
 app = typer.Typer()
@@ -152,9 +153,9 @@ def main(
         typer.Option(
             "--supermarkets",
             "-s",
-            help="Supermercados (comma-separated: masonline,dia)",
+            help="Supermercados (comma-separated: supermercado1,supermercado2)",
         ),
-    ] = "masonline,dia",
+    ] = "supermercado1,supermercado2",
     output: Annotated[
         str, typer.Option("--output", "-o", help="Ruta de salida sin extensión")
     ] = "resultados",

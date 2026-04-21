@@ -1,3 +1,4 @@
+import faulthandler
 import os
 import subprocess
 import threading
@@ -5,10 +6,9 @@ import time
 import webbrowser
 
 import dearpygui.dearpygui as dpg
-import faulthandler
 
-from gui import load_supermarkets_data, load_results_data
-from app import save_multiple_products, build_busca_command
+from app import build_busca_command, save_multiple_products
+from gui import load_results_data, load_supermarkets_data
 
 faulthandler.enable()
 
@@ -263,10 +263,14 @@ def create_gui():
         default_font = dpg.add_font(font_path, 17)
         dpg.bind_font(default_font)
 
+    def close_app_callback(sender, app_data):
+        nonlocal close_requested
+        close_requested = True
+
     with dpg.window(tag="main_window"):
         with dpg.menu_bar():
             with dpg.menu(label="Archivo"):
-                dpg.add_menu_item(label="Salir", callback=lambda: dpg.destroy_context())
+                dpg.add_menu_item(label="Salir", callback=close_app_callback)
 
         with dpg.tab_bar(tag="tab_bar"):
             with dpg.tab(label="Busqueda", tag="tab_busqueda"):
@@ -326,13 +330,16 @@ def create_gui():
     dpg.setup_dearpygui()
     dpg.show_viewport()
 
+    closed = False
     while dpg.is_dearpygui_running():
         dpg.render_dearpygui_frame()
-        if close_requested:
+        if close_requested and not closed:
+            closed = True
             dpg.destroy_context()
             break
 
-    dpg.destroy_context()
+    if not closed:
+        dpg.destroy_context()
 
 
 if __name__ == "__main__":

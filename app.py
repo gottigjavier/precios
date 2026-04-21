@@ -2,14 +2,14 @@ import json
 import subprocess
 import time
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
 
 from paths import (
-    PRODUCTS_FILE,
-    SUPERMERCADOS_FILE,
-    RESULTADOS_JSON,
-    RESULTADOS_CSV,
     BUSCA_SCRIPT,
+    PRODUCTS_FILE,
+    RESULTADOS_CSV,
+    RESULTADOS_JSON,
+    SUPERMERCADOS_FILE,
 )
 
 
@@ -40,7 +40,12 @@ def load_supermarkets(
 
 def build_busca_command(selected_supermarket_ids: List[str]) -> List[str]:
     if not selected_supermarket_ids:
-        default_ids = ["masonline", "dia", "carrefour", "vea"]
+        default_ids = [
+            "supermercado1",
+            "supermercado2",
+            "supermercado3",
+            "supermercado4",
+        ]
         ids_arg = ",".join(default_ids)
     else:
         ids_arg = ",".join(selected_supermarket_ids)

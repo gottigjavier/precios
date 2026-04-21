@@ -29,5 +29,9 @@ sessions/
 *.log
 resultados.*
 products.json
+super_ok.json
+config.json
 1L
-test_size
+test*
+PRD.md
+screenshots/
