@@ -25,37 +25,73 @@ def normalize(s):
     return s.replace(" ", "")
 
 
+def _decimal_alternate(s: str) -> str:
+    if "," in s:
+        return s.replace(",", ".")
+    if "." in s:
+        return s.replace(".", ",")
+    return s
+
+
+def _check_pattern(pattern: str, text: str) -> bool:
+    if pattern in text:
+        return True
+    if "," in pattern or "." in pattern:
+        return _decimal_alternate(pattern) in text
+    return False
+
+
 def filtrar_resultados(results: List, producto: str, marca: str, tamaño: str) -> List:
     if not results:
         return []
 
     filtered = []
-    producto_norm = normalize(producto)
-    marca_norm = normalize(marca)
-    tamaño_input = (tamaño or "").lower().strip()
 
-    t_clean = tamaño_input.replace(" ", "")
-    t_num = "".join(c for c in t_clean if c.isdigit())
-    t_unit = "".join(c for c in t_clean if c.isalpha())
+    producto_norm = (
+        None
+        if producto == "*"
+        else (normalize(producto) if producto else "")
+    )
+    marca_norm = (
+        None if marca == "*" else (normalize(marca) if marca else "")
+    )
+
+    if tamaño == "*":
+        t_num = None
+        t_unit = None
+    else:
+        t_clean = (tamaño or "").lower().strip().replace(" ", "")
+        t_num = "".join(c for c in t_clean if c.isdigit() or c in ".,") or None
+        t_unit = "".join(c for c in t_clean if c.isalpha()) or None
 
     for r in results:
         nombre_norm = normalize(r.nombre)
 
-        matches_producto = producto_norm and producto_norm in nombre_norm
+        if producto_norm is None:
+            matches_producto = True
+        else:
+            matches_producto = producto_norm and producto_norm in nombre_norm
 
-        if t_num and t_unit:
-            matches_size = t_num in nombre_norm and t_unit in nombre_norm
+        if t_num is None and t_unit is None:
+            matches_size = True
+        elif t_num and t_unit:
+            matches_size = (
+                _check_pattern(t_num, nombre_norm) and t_unit in nombre_norm
+            )
         elif t_num:
-            matches_size = t_num in nombre_norm
+            matches_size = _check_pattern(t_num, nombre_norm)
         else:
             matches_size = True
 
-        matches_marca = True
-        if marca_norm:
+        if marca_norm is None:
+            matches_marca = True
+        elif marca_norm:
             marca_r = normalize(r.marca)
             matches_marca = marca_norm in nombre_norm or (
                 marca_r and marca_norm in marca_r
             )
+        else:
+            matches_marca = True
 
         if matches_producto and matches_size and matches_marca:
             filtered.append(r)
@@ -76,6 +112,17 @@ class ScraperEngine:
                 self.scrapers[site_id] = create_scraper(site_id)
         return self.scrapers.get(site_id)
 
+    @staticmethod
+    def _build_query(producto: str, marca: str, tamaño: str) -> str:
+        parts = []
+        if producto and producto != "*":
+            parts.append(producto)
+        if marca and marca != "*":
+            parts.append(marca)
+        if tamaño and tamaño != "*":
+            parts.append(tamaño.replace(",", "."))
+        return " ".join(parts)
+
     def scrape_products(self, products: List[dict], sites: List[str]) -> dict:
         all_results = {"productos": []}
 
@@ -84,7 +131,11 @@ class ScraperEngine:
             tamaño = product.get("tamaño", "")
             marca = product.get("marca", "")
 
-            query = " ".join(filter(None, [producto, marca, tamaño]))
+            if producto == "*" and marca == "*" and tamaño == "*":
+                print(f"Producto inválido: todos los campos son '*'. Se omite.")
+                continue
+
+            query = self._build_query(producto, marca, tamaño)
             product_results = {
                 "producto": producto,
                 "marca": marca,
@@ -115,7 +166,7 @@ class ScraperEngine:
         producto = product.get("producto", "")
         marca = product.get("marca", "")
         tamaño = product.get("tamaño", "")
-        query = " ".join(filter(None, [producto, marca, tamaño]))
+        query = self._build_query(producto, marca, tamaño)
 
         return scraper.search(query)
 
@@ -126,9 +177,14 @@ class ScraperEngine:
             producto = product.get("producto", "")
             marca = product.get("marca", "")
             tamaño = product.get("tamaño", "")
+
+            if producto == "*" and marca == "*" and tamaño == "*":
+                print(f"Producto inválido: todos los campos son '*'. Se omite.")
+                continue
+
             combined_results = []
 
-            query = " ".join(filter(None, [producto, marca, tamaño]))
+            query = self._build_query(producto, marca, tamaño)
 
             for site_id in sites:
                 scraper = self._get_scraper(site_id)

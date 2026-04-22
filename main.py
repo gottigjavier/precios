@@ -31,7 +31,7 @@ def parse_products_arg(products_str: str) -> list:
             if len(parts) >= 2:
                 product["marca"] = parts[1].strip()
             if len(parts) >= 3:
-                product["tamaño"] = parts[2].strip()
+                product["tamaño"] = ",".join(p.strip() for p in parts[2:]).replace(".", ",")
             products.append(product)
     return products
 

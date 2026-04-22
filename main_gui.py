@@ -97,10 +97,13 @@ def save_and_search_callback(sender, app_data):
         line = line.strip()
         if not line:
             continue
-        parts = [p.strip() for p in line.split(",")]
-        producto = parts[0] if parts else ""
-        marca = parts[1] if len(parts) > 1 else ""
-        tamano = parts[2] if len(parts) > 2 else ""
+        parts = line.split(",")
+        producto = parts[0].strip() if parts else ""
+        marca = parts[1].strip() if len(parts) > 1 else ""
+        tamano = (
+            ",".join(p.strip() for p in parts[2:]).strip().replace(".", ",")
+            if len(parts) > 2 else ""
+        )
         if producto:
             products_list.append(
                 {

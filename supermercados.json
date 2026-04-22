@@ -1,13 +1,13 @@
 [
   {
-    "id": "supermercado1",
-    "name": "Supermercado 1",
-    "base_url": "https://www.supermercado1.com.ar"
+    "id": "chango",
+    "name": "Changomas",
+    "base_url": "https://www.masonline.com.ar/"
   },
   {
-    "id": "supermercado2",
-    "name": "Supermercado 2",
-    "base_url": "https://supermercado2.com.ar"
+    "id": "dia",
+    "name": "Dia",
+    "base_url": "https://diaonline.supermercadosdia.com.ar/"
   },
   {
     "id": "supermercado3",
