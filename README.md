@@ -17,7 +17,7 @@ Si se intenta realizar un compra inteligente, sobre todo antes de una importante
 
 Construí este proyecto en Python que permite buscar en segundos y comparar precios de productos en múltiples supermercados online.
 
-Comenzó como una serie de scripts sin intefaz gráfica que guardaba los resultados en un archivo .csv para ser consumidos por una platilla de cálculo. Luego, para bajar la barrera técnica implementé la interfaz gráfica. Por esa razón encontrarán que el flujo del código es como es.
+Comenzó como una serie de scripts sin intefaz gráfica que guardaba los resultados en un archivo .csv para ser consumidos por una planilla de cálculo. Luego, para bajar la barrera técnica implementé la interfaz gráfica. Por esa razón encontrarán que el flujo del código es como es.
 
 ---
 
