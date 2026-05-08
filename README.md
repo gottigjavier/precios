@@ -80,6 +80,27 @@ Para salir de la app presionar la tecla **Esc** o ir al submenú **Archivo -> Sa
 
 ---
 
+### Como buscar
+
+Una vez realizado el paso **[Agregar URL de supermercados](#lista)** estos aparecerán en la lista de supermercados para ser seleccionados al tildar en la caja check-box (por defecto están seleccionados).
+
+Se ingresa en la caja de texto "Datos del Producto" la especificación de la búsqueda en el sigiente orden: producto, marca, tamaño (separados por comas).
+
+Para más de un ítem de búsqueda presionar "Enter" y repetir el método en la siguiente línea.
+
+Se pueden realizar búsquedas utilizando el comodín "*" hasta en dos de los tres criterios de búsqueda, por ejemplo 
+
+```bash
+arroz, *, *
+```
+dará como resultado todos los productos que coincidan con la palabra arroz, de todas las marcas y en todos los tamaños de paquete.
+
+Se verifica que estén seleccionados los supermercados en la lista y se presiona "Buscar".
+
+Los resultados aparecerán en la pestaña **Resultados**. Si se presiona *Actualizar Resultados* se mostrarán lo últimos resultados arrojados: los actuales si ya se realizó una búsqueda o en su defecto los de la búsqueda previa inmediata.
+
+---
+
 ## Estructura del Proyecto
 
 ```
@@ -104,5 +125,5 @@ supermercados/
 
 ## Tech Stack
 
-- **GUI**: [DearPyGUI](https://github.com/PlainPython/dearpygui)
+- **GUI**: [DearPyGUI](https://github.com/hoffstadt/DearPyGui)
 - **Scraping**: Beautiful Soup, Requests, lxml
