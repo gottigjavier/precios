@@ -19,6 +19,9 @@ for file in (jj file list)
     else if string match -q "test*" "$basename"
         echo "Untracking: $file"
         jj file untrack "$file" 2>/dev/null
+    else if string match -q "*__init__.py*" "$basename"
+        echo "Untracking: $file"
+        jj file untrack "$file" 2>/dev/null
     end
 end
 
